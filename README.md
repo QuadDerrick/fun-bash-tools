@@ -4,7 +4,7 @@
  
  -v verboose -n noresolve -l listen -p port -q 1 quit after x seconds
  
- ">> tmplogg2 2>&1 = log funtion with stdout AND errout. netcat uses both to print info."
+ ">> tmplogg2 2>&1" = log funtion with stdout AND errout. netcat uses both to print info.
 
 To have a unpriviledged user recieve web traffic at port 80(http) rerouting it localy. As root run:
 
