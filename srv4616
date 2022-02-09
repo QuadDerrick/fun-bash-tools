@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# A "server" serving a single character (.) with log functionality.
-# -v verboose -n noresolve -l listen -p port -q 1 quit after x seconds
-# ">> tmplogg2 2>&1" = log funtion with stdout AND errout. netcat uses both to print info.
+# a "web server" serving a single character (.) with log functionality.
+# -v = verboose -n = noresolve -l = listen -p = port -q 1 = quit after 1 second..
+# >> tmplogg2 2>&1 = log funtion with stdout AND errout.
 
-echo 'Serving "." @ localhost 4616'
+echo 'Serving "." @ localhost 4616. logging to tmplugg2'
+echo "with the following command"
+echo 'echo -e "HTTP/1.1 200 OK\n\n ." | nc -v -v -n -l -p 4616 -q 1 >> tmplugg2 2>&1'
 while true; do
-  echo -e "HTTP/1.1 200 OK\n\n ." | nc -v -n -l -p 4616 -q 1 >> tmplugg2 2>&1
+  echo -e "HTTP/1.1 200 OK\n\n ." | nc -v -v -n -l -p 4616 -q 1 >> tmplugg2 2>&1
 date >> tmplugg2
 echo "" >> tmplugg2
-done
