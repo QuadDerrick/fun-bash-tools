@@ -11,3 +11,4 @@ while true; do
   echo -e "HTTP/1.1 200 OK\n\n ." | nc -v -v -n -l -p 4616 -q 1 >> tmplugg2 2>&1
 date >> tmplugg2
 echo "" >> tmplugg2
+done
